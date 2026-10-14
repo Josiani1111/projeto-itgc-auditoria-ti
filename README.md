@@ -1,53 +1,41 @@
-Sistema de Auditoria ITGC com Python
+# Sistema de Auditoria ITGC com Python
 
-Sobre o projeto
+## Sobre o projeto
 
-Projeto prático de auditoria de TI desenvolvido em Python, com foco em ITGC (IT General Controls — Controles Gerais de TI), gestão de acessos, identificação de riscos e geração de relatórios de auditoria.
+Projeto prático de auditoria de TI desenvolvido em Python, com foco em **ITGC (IT General Controls — Controles Gerais de TI)**, gestão de acessos, identificação de riscos e geração de relatórios de auditoria.
 
-O sistema identifica funcionários desligados que ainda possuem acesso ativo aos sistemas, registra as falhas encontradas, classifica os riscos associados e apresenta ações corretivas recomendadas e o status da verificação.
+O sistema identifica funcionários desligados que ainda possuem acesso ativo aos sistemas, documenta as falhas encontradas, descreve os riscos associados e apresenta ações corretivas recomendadas e o status da verificação.
 
-Finalidade educacional: o projeto utiliza dados fictícios e simula procedimentos de auditoria de TI.
+**Finalidade educacional:** o projeto utiliza dados fictícios e simula procedimentos de auditoria de TI.
 
-Objetivos
+## Objetivos
 
-Simular a verificação de Controles Gerais de TI.
+- Simular a verificação de Controles Gerais de TI.
+- Identificar possíveis falhas na gestão de acessos.
+- Registrar riscos e recomendar ações corretivas.
+- Gerar relatórios de auditoria em TXT e Excel.
+- Validar as funcionalidades por meio de testes automatizados.
 
-Identificar possíveis falhas na gestão de acessos.
+## Tecnologias utilizadas
 
-Registrar riscos e recomendar ações corretivas.
+- Python
+- pytest
+- openpyxl
+- Git e GitHub
 
-Gerar relatórios de auditoria em TXT e Excel.
+## Funcionalidades
 
-Validar as funcionalidades por meio de testes automatizados.
+- Verificação dos acessos de usuários.
+- Identificação de funcionários desligados com acesso ativo.
+- Registro de falhas de controle e riscos associados.
+- Recomendações de ações corretivas.
+- Geração de relatórios de auditoria em formato TXT.
+- Geração de planilhas Excel com data, controle, funcionário, falha identificada, risco, ação recomendada e status.
+- Testes automatizados para validar as funcionalidades do sistema.
 
-Tecnologias utilizadas
+## Estrutura do projeto
 
-Python
-
-pytest
-
-openpyxl
-
-Git e GitHub
-
-Funcionalidades
-
-Verificação de acessos de usuários.
-
-Identificação de funcionários desligados com acesso ativo.
-
-Registro de falhas de controle e riscos associados.
-
-Recomendações de ações corretivas.
-
-Geração de relatórios de auditoria em formato TXT.
-
-Geração de planilhas Excel com data, controle, funcionário, falha identificada, risco, ação recomendada e status.
-
-Testes automatizados para validar as funcionalidades do sistema.
-
-Estrutura do projeto
-
+```text
 projeto-itgc-auditoria-ti/
 ├── src/
 │   ├── controle_acesso.py
@@ -59,53 +47,71 @@ projeto-itgc-auditoria-ti/
 ├── relatorios/
 ├── .gitignore
 └── README.md
+```
 
-A pasta relatorios/ armazena os arquivos gerados durante a execução do sistema.
+A pasta `relatorios/` armazena os arquivos gerados durante a execução do sistema.
 
-Como executar
+## Como executar
 
-1. Instalar as dependências
+### 1. Instalar as dependências
 
 No terminal do VS Code ou no PowerShell, execute:
 
+```powershell
 py -m pip install openpyxl pytest
+```
 
-2. Gerar o relatório TXT
+### 2. Gerar o relatório TXT
 
+```powershell
 py -m src.relatorio_auditoria
+```
 
-3. Gerar o relatório Excel
+### 3. Gerar o relatório Excel
 
+```powershell
 py -m src.relatorio_excel
+```
 
-Os relatórios serão salvos na pasta relatorios/.
+Os relatórios serão salvos na pasta `relatorios/`.
 
-4. Executar os testes automatizados
+### 4. Executar os testes automatizados
 
+```powershell
 py -m pytest tests -v
+```
 
-Conceitos de auditoria praticados
+## Validação do projeto
 
-ITGC — Controles Gerais de TI.
+Os testes automatizados verificam:
 
-Gestão de acessos e desligamento de usuários.
+- Identificação de funcionário desligado com acesso ativo.
+- Ausência de alertas para funcionários ativos.
+- Ausência de alertas para funcionários desligados sem acesso ativo.
+- Geração do relatório TXT.
+- Presença das informações esperadas no relatório.
 
-Identificação e documentação de falhas de controle.
+**Última validação registrada:** 5 testes aprovados.
 
-Avaliação de riscos e recomendações de ações corretivas.
+## Conceitos de auditoria praticados
 
-Geração de evidências e acompanhamento de pendências.
+- ITGC — Controles Gerais de TI.
+- Gestão de acessos e desligamento de usuários.
+- Identificação e documentação de falhas de controle.
+- Avaliação de riscos e recomendações de ações corretivas.
+- Documentação de evidências e acompanhamento de pendências.
+- Testes automatizados e validação de resultados.
 
-Testes automatizados e validação de resultados.
-
-Observação sobre segurança
+## Observação sobre segurança
 
 O sistema simula a identificação de falhas de acesso utilizando dados fictícios. A desativação real de contas, a validação das evidências e a execução de ações corretivas dependem dos responsáveis autorizados e dos procedimentos da organização.
 
-Autora
+## Autora
 
-Josiani Oliveira
+**Josiani Oliveira**
 
 Estudante do último ano de Análise e Desenvolvimento de Sistemas.
 
-Interesses profissionais: QA e testes de software, Python, suporte de TI e governança de TI.
+**Interesses profissionais:** QA e testes de software, Python, suporte de TI e governança de TI.
+
+GitHub: [Josiani1111](https://github.com/Josiani1111)
