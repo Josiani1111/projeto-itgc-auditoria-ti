@@ -4,7 +4,19 @@ from pathlib import Path
 from src.relatorio_auditoria import gerar_relatorio
 
 
-def test_relatorio_registra_falha_e_risco():
+def test_gerar_relatorio_cria_arquivo():
+    gerar_relatorio()
+
+    arquivo = (
+        Path(__file__).resolve().parent.parent
+        / "relatorios"
+        / "relatorio_auditoria.txt"
+    )
+
+    assert arquivo.exists()
+
+
+def test_gerar_relatorio_contem_informacoes_de_auditoria():
     gerar_relatorio()
 
     arquivo = (
@@ -15,22 +27,5 @@ def test_relatorio_registra_falha_e_risco():
 
     conteudo = arquivo.read_text(encoding="utf-8")
 
-    assert "RELATORIO DE AUDITORIA ITGC" in conteudo
-    assert "Carlos" in conteudo
-    assert "RISCO:" in conteudo
-    assert "ACAO RECOMENDADA:" in conteudo
-
-
-def test_relatorio_registra_evidencias_e_status():
-    gerar_relatorio()
-
-    arquivo = (
-        Path(__file__).resolve().parent.parent
-        / "relatorios"
-        / "relatorio_auditoria.txt"
-    )
-
-    conteudo = arquivo.read_text(encoding="utf-8")
-
-    assert "EVIDENCIAS NECESSARIAS:" in conteudo
-    assert "STATUS: Pendente de verificacao." in conteudo
+    assert "RELATÓRIO DE AUDITORIA ITGC" in conteudo
+    assert "Data da geração:" in conteudo

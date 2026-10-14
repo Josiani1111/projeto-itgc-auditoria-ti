@@ -48,9 +48,11 @@ def gerar_relatorio_excel():
 
     if alertas:
         for alerta in alertas:
-            nome = alerta.split(":")[1].split(" está")[0].strip()
+         nome = alerta.split(":", 1)[1].strip()
+         nome = nome.split(" está")[0].strip()
+         nome = nome.replace("ALERTA: ", "")
 
-            planilha.append([
+        planilha.append([
                 data_auditoria,
                 "Gestão de acessos",
                 nome,

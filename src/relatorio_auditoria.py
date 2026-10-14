@@ -1,4 +1,3 @@
-
 from datetime import datetime
 from pathlib import Path
 
@@ -14,33 +13,33 @@ def gerar_relatorio():
     arquivo = pasta_relatorios / "relatorio_auditoria.txt"
 
     with arquivo.open("w", encoding="utf-8") as relatorio:
-        relatorio.write("RELATORIO DE AUDITORIA ITGC\n")
+        relatorio.write("RELATÓRIO DE AUDITORIA ITGC\n")
         relatorio.write("=" * 40 + "\n")
         relatorio.write(
-            f"Data da geracao: {datetime.now():%d/%m/%Y %H:%M}\n\n"
+            f"Data da geração: {datetime.now():%d/%m/%Y %H:%M}\n\n"
         )
 
         if not alertas:
             relatorio.write("Nenhuma falha de acesso identificada.\n")
 
         for alerta in alertas:
-            relatorio.write("CONTROLE: Gestao de acessos\n")
+            relatorio.write("CONTROLE: Gestão de acessos\n")
             relatorio.write(f"FALHA: {alerta}\n")
             relatorio.write(
-                "RISCO: Acesso nao autorizado a sistemas e dados.\n"
+                "RISCO: Acesso não autorizado a sistemas e dados.\n"
             )
             relatorio.write(
-                "ACAO RECOMENDADA: Solicitar a desativacao do acesso "
-                "e confirmar a execucao.\n"
+                "AÇÃO RECOMENDADA: Solicitar a desativação do acesso "
+                "e confirmar a execução.\n"
             )
             relatorio.write(
-                "EVIDENCIAS NECESSARIAS: Registro da solicitacao, "
-                "aprovacao aplicavel e confirmacao da desativacao.\n"
+                "EVIDÊNCIAS NECESSÁRIAS: Registro da solicitação, "
+                "aprovação aplicável e confirmação da desativação.\n"
             )
-            relatorio.write("STATUS: Pendente de verificacao.\n")
+            relatorio.write("STATUS: Pendente de verificação.\n")
             relatorio.write("-" * 40 + "\n")
 
-    print(f"Relatorio gerado em: {arquivo}")
+    print(f"Relatório gerado em: {arquivo}")
 
 
 if __name__ == "__main__":
